@@ -35,7 +35,7 @@ public class Either<TLeft,TRight>
 	 */
 	public static <TRight> Either right(TRight value) {
 		if (value == null) {
-			throw new IllegalArgumentException("expected non-null left value");
+			throw new IllegalArgumentException("expected non-null right value");
 		}
 		return new Either(null, value);
 	}
