@@ -5,10 +5,10 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 /**
- * An Either is an object that can contain either a value of type TLeft or TRight but never both
- * by convention an Either contains a right value if a function has executed successfully and left otherwise
+ * An Either is an object that can contain either a value of type TLeft or TRight but never both.
+ * By convention an Either contains a right value if a function has executed successfully and left otherwise
  *
- * @author rossbille
+ * @author RossBille
  * @param <TLeft> the type of the left value
  * @param <TRight> the type of the right value
  */
@@ -63,7 +63,7 @@ public class Either<TLeft, TRight>{
 	 * @param ofLeft the action to run if this either contains a left value
 	 * @param ofRight the action to run if this either contains a right value
 	 */
-	public void Case(Consumer<TLeft> ofLeft, Consumer<TRight> ofRight){
+	public void match(Consumer<TLeft> ofLeft, Consumer<TRight> ofRight){
 		if(ofLeft == null){
 			throw new IllegalArgumentException("expected non-null ofLeft action");
 		}
@@ -87,7 +87,7 @@ public class Either<TLeft, TRight>{
 	 *
 	 * @return the result of the function that is applied of type Out
 	 */
-	public <Out> Out Case(Function<TLeft, Out> ofLeft, Function<TRight, Out> ofRight){
+	public <Out> Out match(Function<TLeft, Out> ofLeft, Function<TRight, Out> ofRight){
 		if(ofLeft == null){
 			throw new IllegalArgumentException("expected non-null ofLeft function");
 		}

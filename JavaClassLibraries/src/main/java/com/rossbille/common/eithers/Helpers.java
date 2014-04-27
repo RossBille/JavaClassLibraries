@@ -25,7 +25,7 @@ public class Helpers{
 		List<TLeft> lefts = new LinkedList<>();
 
 		eithers.stream().forEach((either) -> {
-			either.Case(
+			either.match(
 					(TLeft argument) -> lefts.add(argument),
 					(TRight argument) -> rights.add(argument)
 			);
