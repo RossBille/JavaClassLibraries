@@ -15,7 +15,7 @@ public class Helpers
 	 * @param <TLeft> the left type
 	 * @param <TRight> the right type
 	 * @param eithers the list of eithers to partition
-	 * @return Both<List<Tleft>,List<TRight>> 
+	 * @return a both containing a List of type TLeft and a List of type TRight
 	 */
 	public static<TLeft,TRight> Both<List<TLeft>,List<TRight>> partitionEithers(List<Either<TLeft,TRight>> eithers){
 		List<TRight> rights = new LinkedList<>();

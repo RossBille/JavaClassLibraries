@@ -6,17 +6,16 @@ import java.util.function.Function;
  * An Either is an object that can contain either a value of type TLeft or TRight but never both
  * by convention an Either contains a right value if a function has executed successfully and left otherwise
  * @author rossbille
- * @param <TLeft>
- * @param <TRight> 
+ * @param <TLeft> the type of the left value
+ * @param <TRight> the type of the right value
  */
-public class Either<TLeft,TRight>
-{
+public class Either<TLeft,TRight>{
 	private final TLeft left;
 	private final TRight right;
  
 	/**
 	 * Constructs a left type Either
-	 * @param <TLeft> The left type of this Either
+	 * @param <TLeft> the left type of this Either
 	 * @param value the value this Either contains
 	 * @return the constructed Either
 	 */
@@ -29,7 +28,7 @@ public class Either<TLeft,TRight>
 	
 	/**
 	 * Constructs a right type Either
-	 * @param <TRight> The right type of this either
+	 * @param <TRight> the right type of this either
 	 * @param value the value this Either contains
 	 * @return the constructed either
 	 */
@@ -75,7 +74,7 @@ public class Either<TLeft,TRight>
 	 * @param <Out> the return type 
 	 * @param ofLeft the function to run if this either contains a left value
 	 * @param ofRight the function to run if this either contains a right value
-	 * @return The result of the function that is applied of type Out
+	 * @return the result of the function that is applied of type Out
 	 */
 	public<Out> Out Case(Function<TLeft,Out> ofLeft, Function<TRight,Out> ofRight){
 		if(ofLeft == null){
