@@ -21,7 +21,7 @@ public class Either<TLeft, TRight>{
 	 * Constructs a left type Either
 	 *
 	 * @param <TLeft> the left type of this Either
-         * @param <TRight> the right type of this Either
+     * @param <TRight> the right type of this Either
 	 * @param value the value this Either contains
 	 *
 	 * @return the constructed Either
@@ -36,7 +36,7 @@ public class Either<TLeft, TRight>{
 	/**
 	 * Constructs a right type Either
 	 *
-         * @param <TLeft> the left type of this either
+     * @param <TLeft> the left type of this either
 	 * @param <TRight> the right type of this either
 	 * @param value the value this Either contains
 	 *
