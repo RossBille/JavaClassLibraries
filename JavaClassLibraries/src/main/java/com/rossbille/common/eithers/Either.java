@@ -21,11 +21,12 @@ public class Either<TLeft, TRight>{
 	 * Constructs a left type Either
 	 *
 	 * @param <TLeft> the left type of this Either
+	 * @param <TRight> the right type of this Either
 	 * @param value the value this Either contains
 	 *
 	 * @return the constructed Either
 	 */
-	public static <TLeft> Either left(TLeft value){
+	public static <TLeft, TRight> Either<TLeft, TRight> left(TLeft value){
 		if(value == null){
 			throw new IllegalArgumentException("expected non-null left value");
 		}
@@ -35,12 +36,13 @@ public class Either<TLeft, TRight>{
 	/**
 	 * Constructs a right type Either
 	 *
+	 * @param <TLeft> the left type of this either
 	 * @param <TRight> the right type of this either
 	 * @param value the value this Either contains
 	 *
 	 * @return the constructed either
 	 */
-	public static <TRight> Either right(TRight value){
+	public static <TLeft, TRight> Either<TLeft, TRight> right(TRight value){
 		if(value == null){
 			throw new IllegalArgumentException("expected non-null right value");
 		}
@@ -117,7 +119,7 @@ public class Either<TLeft, TRight>{
 		if(getClass() != obj.getClass()){
 			return false;
 		}
-		
+
 		final Either<?, ?> other = (Either<?, ?>) obj;
 		if(!Objects.equals(this.left, other.left)){
 			return false;
